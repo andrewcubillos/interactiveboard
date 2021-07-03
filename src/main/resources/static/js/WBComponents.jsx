@@ -44,11 +44,12 @@ class WBCanvas extends React.Component {
             let color1 = Math.round(Math.random() * (max - min) + min);
             let color2 = Math.round(Math.random() * (max2 - min2) + min2);
             let color3 = Math.round(Math.random() * (max3 - min3) + min3);
+            let buttonclear;
             p.setup = function () {
                 
                 p.createCanvas(700, 410);
                 p.background(0);
-                var buttonclear= createButton("clear");
+                buttonclear= p.createButton("clear");
                 buttonclear.mousePressed(resetSketch);
             };
             function resetSketch(){
