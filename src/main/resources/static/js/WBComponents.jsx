@@ -35,9 +35,9 @@ class WBCanvas extends React.Component {
                 p.background(0);
             };
             p.draw = function () {
-                var color = Math.round(Math.random()*900);
                 var color1 = Math.round(Math.random()*900);
                 var color2 = Math.round(Math.random()*900);
+                var color3 = Math.round(Math.random()*900);
                 if (p.mouseIsPressed === true) {
                     
                     p.fill(color1, color2, color3);
