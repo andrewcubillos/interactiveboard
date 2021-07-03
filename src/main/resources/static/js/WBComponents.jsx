@@ -72,8 +72,7 @@ class WBCanvas extends React.Component {
             };
             
             function reset(){
-                noCanvas();
-                p.createCanvas(700,410);
+                
             }
                 
         }
