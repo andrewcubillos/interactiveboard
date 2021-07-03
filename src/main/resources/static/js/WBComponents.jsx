@@ -30,14 +30,15 @@ class WBCanvas extends React.Component {
         this.sketch = function (p) {
             let x = 100;
             let y = 100;
+            let color1 = Math.round(Math.random()*900);
+            let color2 = Math.round(Math.random()*900);
+            let color3 = Math.round(Math.random()*900);
             p.setup = function () {
                 p.createCanvas(700, 410);
                 p.background(0);
             };
             p.draw = function () {
-                var color1 = Math.round(Math.random()*900);
-                var color2 = Math.round(Math.random()*900);
-                var color3 = Math.round(Math.random()*900);
+               
                 if (p.mouseIsPressed === true) {
                     
                     p.fill(color1, color2, color3);
