@@ -73,7 +73,7 @@ class WBCanvas extends React.Component {
             
             p.reset = function(){
                 
-            }
+            };
                 
         }
     }
