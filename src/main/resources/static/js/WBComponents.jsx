@@ -32,12 +32,16 @@ class WBCanvas extends React.Component {
         this.sketch = function (p) {
             let x = 100;
             let y = 100;
-            let max=900;
-            let min=300;
+            let max=200;
+            let min=1;
+            let max2=200;
+            let min2=300;
+            let max3=300;
+            let min3=400;
             
-            let color1 = 350;
-            let color2 = 580;
-            let color3 = 745;
+            let color1 = Math.round(Math.random() * (max - min) + min);
+            let color2 = Math.round(Math.random() * (max2 - min2) + min2);
+            let color3 = Math.round(Math.random() * (max3 - min3) + min3);
             p.setup = function () {
                 
                 p.createCanvas(700, 410);
@@ -49,7 +53,7 @@ class WBCanvas extends React.Component {
                     
                     p.fill(color1, color2, color3);
                     p.ellipse(p.mouseX, p.mouseY, 20, 20);
-                    wsreference.send(p.mouseX, p.mouseY,color1,color2,color3); 
+                    wsreference.send(color1,color2,p.mouseX, p.mouseY); 
                 }
                 if (p.mouseIsPressed === false) {
                     p.fill(255, 255, 255);
@@ -58,7 +62,7 @@ class WBCanvas extends React.Component {
         }
     }
     drawPoint(x, y) {
-            this.myp5.ellipse(x, y, 70, 70);
+            this.myp5.ellipse(x, y, 20, 20);
     }
     
     componentDidMount() {
@@ -105,8 +109,8 @@ class WSBBChannel {
     onError(evt) {
         console.error("In onError", evt);
     }
-    send(x, y) {
-        let msg = '{ "x": ' + (x) + ', "y": ' + (y) + "}";
+    send(x, y,color1,color2) {
+        let msg = '{ "color1": ' + (color1)+' "color2": ' + (color2)+' "x": ' + (x) + ', "y": ' + (y) + "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
