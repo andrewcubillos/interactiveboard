@@ -44,22 +44,22 @@ class WBCanvas extends React.Component {
             let color1 = Math.round(Math.random() * (max - min) + min);
             let color2 = Math.round(Math.random() * (max2 - min2) + min2);
             let color3 = Math.round(Math.random() * (max3 - min3) + min3);
-            let buttonclear;
+            let buttonclear,pressed;
+            
             p.setup = function () {
                 
                 p.createCanvas(700, 410);
                 p.background(0);
-                buttonclear= p.createButton("clear");
+               
                 
-               if (buttonclear.mousePressed()){
-                    p.noCanvas();
-                    p.createCanvas(700, 410);
-               }     
+                buttonclear= p.createButton("clear");
+                buttonclear.mousePressed(reset);
+                
               
             };
-           
+            
             p.draw = function () {
-               
+                
                 if (p.mouseIsPressed === true) {
                     
                     p.fill(color1, color2, color3);
@@ -70,6 +70,12 @@ class WBCanvas extends React.Component {
                     p.fill(255, 255, 255);
                 }
             };
+            
+            function reset(){
+                noCanvas();
+                p.createCanvas(700,410);
+            }
+                
         }
     }
     drawPoint(x, y,color1,color2,color3) {
