@@ -52,7 +52,7 @@ class WBCanvas extends React.Component {
                 buttonclear= p.createButton("clear");
                 
                     
-                p.clear();
+               p.noCanvas();
             };
            
             p.draw = function () {
