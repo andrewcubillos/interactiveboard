@@ -50,11 +50,9 @@ class WBCanvas extends React.Component {
                 p.createCanvas(700, 410);
                 p.background(0);
                 buttonclear= p.createButton("clear");
-                buttonclear.mousePressed(p.resetSketch);
+                buttonclear.mousePressed(p.clear());
             };
-            p.resetSketch = function(){
-                p.clear();
-            }
+            
             p.draw = function () {
                
                 if (p.mouseIsPressed === true) {
