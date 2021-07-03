@@ -88,7 +88,7 @@ class WBCanvas extends React.Component {
     {
         return(
                 <div>
-                <h4>Drawing status: {this.state.loadingState}</h4>
+                
                 </div>);
     }
 }
