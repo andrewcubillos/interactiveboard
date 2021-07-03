@@ -34,10 +34,10 @@ class WBCanvas extends React.Component {
             let y = 100;
             let max=200;
             let min=1;
-            let max2=200;
-            let min2=300;
-            let max3=300;
-            let min3=400;
+            let max2=400;
+            let min2=500;
+            let max3=600;
+            let min3=800;
             
             let color1 = Math.round(Math.random() * (max - min) + min);
             let color2 = Math.round(Math.random() * (max2 - min2) + min2);
@@ -53,7 +53,7 @@ class WBCanvas extends React.Component {
                     
                     p.fill(color1, color2, color3);
                     p.ellipse(p.mouseX, p.mouseY, 20, 20);
-                    wsreference.send(color1,color2,p.mouseX, p.mouseY); 
+                    wsreference.send(p.mouseX, p.mouseY,color1,color2); 
                 }
                 if (p.mouseIsPressed === false) {
                     p.fill(255, 255, 255);
