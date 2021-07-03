@@ -51,7 +51,7 @@ class WBCanvas extends React.Component {
                 p.background(0);
                 buttonclear= p.createButton("clear");
                 if(buttonclear.mousePressed()){
-                    p.clear();
+                    
                 }
             };
            
