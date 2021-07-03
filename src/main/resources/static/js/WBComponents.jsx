@@ -58,7 +58,7 @@ class WBCanvas extends React.Component {
         }
     }
     drawPoint(x, y) {
-            this.myp5.ellipse(x, y, 20, 20);
+            this.myp5.ellipse(x, y, 70, 70);
     }
     
     componentDidMount() {
