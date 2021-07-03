@@ -17,9 +17,7 @@ class Editor extends React.Component {
 class WBCanvas extends React.Component {
     
     constructor(props) {
-        let color1 = Math.round(Math.random()*900);
-            let color2 = Math.round(Math.random()*900);
-            let color3 = Math.round(Math.random()*900);
+        
         super(props);
         this.comunicationWS =
                 new WSBBChannel(BBServiceURL(),
@@ -34,7 +32,9 @@ class WBCanvas extends React.Component {
         this.sketch = function (p) {
             let x = 100;
             let y = 100;
-            
+            let color1 = Math.round(Math.random()*900);
+            let color2 = Math.round(Math.random()*900);
+            let color3 = Math.round(Math.random()*900);
             p.setup = function () {
                 
                 p.createCanvas(700, 410);
@@ -46,7 +46,7 @@ class WBCanvas extends React.Component {
                     
                     p.fill(color1, color2, color3);
                     p.ellipse(p.mouseX, p.mouseY, 20, 20);
-                    wsreference.send(p.mouseX, p.mouseY); 
+                    wsreference.send(p.mouseX, p.mouseY,color1,color2,color3); 
                 }
                 if (p.mouseIsPressed === false) {
                     p.fill(255, 255, 255);
