@@ -32,9 +32,12 @@ class WBCanvas extends React.Component {
         this.sketch = function (p) {
             let x = 100;
             let y = 100;
-            let color1 = Math.round(Math.random()*900);
-            let color2 = Math.round(Math.random()*900);
-            let color3 = Math.round(Math.random()*900);
+            let max=900;
+            let min=300;
+            
+            let color1 = Math.round(Math.random() * (max - min) + min);
+            let color2 = Math.round(Math.random() * (max - min) + min);
+            let color3 = Math.round(Math.random() * (max - min) + min);
             p.setup = function () {
                 
                 p.createCanvas(700, 410);
