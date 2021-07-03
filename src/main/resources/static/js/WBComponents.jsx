@@ -53,7 +53,7 @@ class WBCanvas extends React.Component {
                
                 
                 buttonclear= p.createButton("clear");
-                buttonclear.mousePressed(reset);
+                buttonclear.mousePressed(p.reset);
                 
               
             };
@@ -71,7 +71,7 @@ class WBCanvas extends React.Component {
                 }
             };
             
-            function reset(){
+            p.reset = function(){
                 
             }
                 
